@@ -1,0 +1,10 @@
+{
+  "port": 5000,
+  "mongoose": {
+    "uri": "mongodb://localhost:27017/crowdfunding-site",
+    "options": {
+      "useCreateIndex": true,
+      "useNewUrlParser": true
+    }
+  }
+}

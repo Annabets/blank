@@ -1,0 +1,17 @@
+.img-header{
+    background-image: url("lighthouse.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+    position: relative;
+}
+
+.text-block{
+    font-size: xx-large;
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
