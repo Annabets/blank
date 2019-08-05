@@ -46,7 +46,7 @@ function register(user) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/login');
+                    history.push('/');
                 },
                 error => {
                     dispatch(failure(error.toString()));
@@ -77,16 +77,16 @@ function getUsers() {
 
 function getUserById(id) {
     return dispatch => {
-        dispatch(request());
+        dispatch(request(id));
 
-        userService.getUserById(id)
+        return userService.getUserById(id)
             .then(
                 user => dispatch(success(user)),
                 error => dispatch(failure(error))
             );
     };
 
-    function request(user) {return {type: userConstants.GETBYID_REQUEST}, user}
+    function request(id) {return {type: userConstants.GETBYID_REQUEST, id}}
     function success(user) { return {type: userConstants.GETBYID_SUCCESS, user}}
     function failure(error) { return{type:userConstants.GETBYID_FAILURE, error}}
 }
@@ -117,12 +117,12 @@ function _delete(id) {
 
         userService.delete(id)
             .then(
-                user => dispatch(success(id)),
+                user => {dispatch(success(id));history.push('/');},
                 error => dispatch(failure(id, error.toString()))
             );
     };
 
     function request(id) { return { type: userConstants.DELETE_REQUEST, id } }
     function success(id) { return { type: userConstants.DELETE_SUCCESS, id } }
-    function failure(id, error) { return { type: userConstants.DELETE_FAILURE, id, error } }
+    function failure(error) { return { type: userConstants.DELETE_FAILURE, error } }
 }

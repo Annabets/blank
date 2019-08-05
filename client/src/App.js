@@ -2,43 +2,53 @@ import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import './App.css';
 import {history} from './_helpers';
-import {connect} from "react-redux";
 import {HomePage} from "./_components/HomePage";
 import {RegisterPage} from "./_components/RegisterPage";
 import {LoginPage} from "./_components/LoginPage";
-import NavigationBar from "./_components/NavigationBar";
+import {UserPage} from "./_components/UserPage";
+import {NavigationBar} from "./_components/NavigationBar";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 
-class App extends React.Component{
+export default class App extends React.Component{
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
         this.unlisten = history.listen((location, action) => {
-            console.log("on route change");
+            console.log('on route change')
         });
     }
     componentWillUnmount() {
         this.unlisten();
     }
 
+    withJumbotron(Component){
+        return function () {
+            return(
+                <Jumbotron>
+                    <Container>
+                        <Col md={{span:8,offset:2}} lg={{span:6,offset:3}}>
+                            <Component />
+                        </Col>
+                    </Container>
+                </Jumbotron>
+            )
+        }
+    }
+
     render() {
         return (
             <>
-                <NavigationBar/>
+                <NavigationBar />
                 <Router history={history}>
                     <>
                         <Route exact path="/" component={HomePage} />
-                        <div className="jumbotron">
-                            <div className="container">
-                                <div className="col-sm-12 col-sm-offset-2">
-                                    <div className="col-md-12 col-md-offset-3">
-                                        <Route exact path="/register" component={RegisterPage} />
-                                        <Route exact path="/login" component={LoginPage} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Route exact path="/register" component={this.withJumbotron(RegisterPage)} />
+                        <Route exact path="/login" component={this.withJumbotron(LoginPage)} />
+                        <Route path="/user/:id" component={UserPage}/>
                     </>
                 </Router>
             </>
@@ -46,14 +56,3 @@ class App extends React.Component{
     }
 
 }
-
-function mapState(state) {
-    return {};
-}
-
-const actionCreators={
-
-};
-
-const connectedApp = connect(mapState,actionCreators)(App);
-export {connectedApp as App};

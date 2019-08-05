@@ -1,0 +1,16 @@
+{"message":"user already exists","level":"error"}
+{"message":"Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","level":"error"}
+{"message":"User validation failed: userName: Path `userName` is required.","level":"error"}
+{"message":"user already exists","level":"error"}
+{"message":"user already exists","level":"error"}
+{"errors":{"hash":{"message":"Path `hash` is required.","name":"ValidatorError","properties":{"message":"Path `hash` is required.","type":"required","path":"hash"},"kind":"required","path":"hash"},"username":{"message":"Path `username` is required.","name":"ValidatorError","properties":{"message":"Path `username` is required.","type":"required","path":"username"},"kind":"required","path":"username"},"lastName":{"message":"Path `lastName` is required.","name":"ValidatorError","properties":{"message":"Path `lastName` is required.","type":"required","path":"lastName"},"kind":"required","path":"lastName"},"firstName":{"message":"Path `firstName` is required.","name":"ValidatorError","properties":{"message":"Path `firstName` is required.","type":"required","path":"firstName"},"kind":"required","path":"firstName"}},"_message":"User validation failed","message":"User validation failed: hash: Path `hash` is required., username: Path `username` is required., lastName: Path `lastName` is required., firstName: Path `firstName` is required.","name":"ValidationError","level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"message":"Cannot set headers after they are sent to the client","level":"error"}
+{"message":"E11000 duplicate key error collection: crowdfunding-site.users index: userName_1 dup key: { : null }","level":"error"}
+{"message":"E11000 duplicate key error collection: crowdfunding-site.users index: userName_1 dup key: { : null }","level":"error"}
+{"message":"E11000 duplicate key error collection: crowdfunding-site.users index: userName_1 dup key: { : null }","level":"error"}
+{"message":"E11000 duplicate key error collection: crowdfunding-site.users index: userName_1 dup key: { : null }","level":"error"}
+{"message":"E11000 duplicate key error collection: crowdfunding-site.users index: userName_1 dup key: { : null }","level":"error"}
+{"message":"E11000 duplicate key error collection: crowdfunding-site.users index: userName_1 dup key: { : null }","level":"error"}
+{"message":"E11000 duplicate key error collection: crowdfunding-site.users index: userName_1 dup key: { : null }","level":"error"}

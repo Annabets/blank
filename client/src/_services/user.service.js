@@ -56,7 +56,7 @@ function update(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`/api/users/${user.id}`, requestOptions).then(handleResponse);
+    return fetch(`/api/users/${user._id}`, requestOptions).then(handleResponse);
 }
 
 function _delete(id) {
@@ -81,6 +81,6 @@ function handleResponse(response){
                 (data && data.message) || response.statusText
             );
         }
-        return data;
+        return Promise.resolve(data);
     })
 }

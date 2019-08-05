@@ -6,5 +6,8 @@
       "useCreateIndex": true,
       "useNewUrlParser": true
     }
+  },
+  "jwt": {
+    "secret": "WinterIsComing"
   }
 }
